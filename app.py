@@ -13,22 +13,20 @@ profile_pic = current_dir / "profile_pic.png"
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Kartik Anand"
 PAGE_ICON = ":wave:"
+LAYOUT = "wide"
 NAME = "Kartik Anand"
-DESCRIPTION = """
-Collaborative professional with ~4 years of experience in the financial services industry. 
-Excellent problem-solving skills that help drive results in an extremely fast-paced environment.
-Background in software development and analytics. Strategic and decisive thinker with strong communication skills and interpersonal abilities.
-"""
+DESCRIPTION = """Collaborative professional with ~4 years of experience in the financial services industry. Excellent 
+problem-solving skills that help drive results in an extremely fast-paced environment. Background in data analytics 
+and software development. Strategic and decisive thinker with strong communication skills and interpersonal 
+abilities."""
 EMAIL = "anandkartik97@gmail.com"
 SOCIAL_MEDIA = {
-    "📍 Singapore": "",
-    "💬 LinkedIn": "https://www.linkedin.com/in/kartik-anand-44323312a/",
-    "📞 +65-97850414": "",
+    "💬 LinkedIn": "https://www.linkedin.com/in/kartik-anand-44323312a/"
 }
 
-st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
+st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON, layout=LAYOUT)
 
-# --- LOAD CSS, PDF & PROFIL PIC ---
+# --- LOAD CSS, PDF & PROFILE PIC ---
 with open(css_file) as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 with open(resume_file, "rb") as pdf_file:
@@ -40,7 +38,7 @@ col1, col2 = st.columns(2, gap="small")
 with col1:
     st.image(profile_pic, width=300)
     st.write('\n')
-    st.write('Data Analytics | Quant Trading | FinTech')
+    st.write("Talks about #data science #analytics #quant trading #fintech #data engineering")
 
 with col2:
     st.title(NAME)
@@ -51,23 +49,37 @@ with col2:
         file_name=resume_file.name,
         mime="application/octet-stream",
     )
+    st.write("📍 Singapore 📞 +65-97850414")
+    for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
+        st.write(f"[{platform}]({link})")
     st.write("📧", EMAIL)
-
-# --- SOCIAL LINKS ---
-st.write('\n')
-cols = st.columns(len(SOCIAL_MEDIA), gap='large')
-for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
-    cols[index].write(f"[{platform}]({link})")
 
 # --- SKILLS ---
 st.write('\n')
 st.subheader("Technical Skills")
-st.write(
-    """
-- ⚡Python  ⚡Java  ⚡SQL  ⚡Airflow ⚡Plotly ⚡Tableau ⚡PowerBI ⚡MS Excel
-- ⚡Postgres  ⚡PySpark  ⚡Amazon Athena  ⚡AWS SageMaker ⚡Hue ⚡Magellan ⚡ Jenkins
-"""
-)
+info = {'skills':
+            ['Python', 'Data Science', 'SQL', 'Airflow', 'Postgres', 'Snowflake',
+             'Plotly', 'Tableau', 'PowerBI', 'Java', 'Amazon Athena', 'MS Excel', 'Amazon SageMaker', 'Hue', 'Jenkins']
+        }
+skill_col_size = 6
+
+
+def skill_tab():
+    rows, cols = len(info['skills']) // skill_col_size, skill_col_size
+    skills = iter(info['skills'])
+    if len(info['skills']) % skill_col_size != 0:
+        rows += 1
+    for x in range(rows):
+        columns = st.columns(skill_col_size)
+        for index_ in range(skill_col_size):
+            try:
+                columns[index_].button(next(skills))
+            except:
+                break
+
+
+with st.spinner(text="Loading section..."):
+    skill_tab()
 
 # --- WORK HISTORY ---
 st.write('\n')
@@ -164,3 +176,22 @@ st.markdown('Successfully led a team of 20+ volunteers to organise Sport Day eve
 st.markdown("🤝 Tech Head - Annual Literary Fest, DTU")
 st.markdown('Successfully led a team of 20+ people and created a visually appealing web portal responsible for '
             'registration of 1200+ participants')
+
+# --- CONTACT ---
+with st.container():
+    st.write("---")
+    st.subheader("Contact Me")
+    st.write("##")
+
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        contact_form = """
+        <form action="https://formsubmit.co/4abfc8151cb0d8dd6d2030aea06db365 " method="POST">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        """
+        st.markdown(contact_form, unsafe_allow_html=True)
