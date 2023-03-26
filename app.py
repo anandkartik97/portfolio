@@ -87,6 +87,18 @@ st.subheader("Work Experience")
 st.write("---")
 
 # --- JOB 1
+st.write("💼", "**Senior Developer - Data | Olam Financial Services**")
+st.write("10/2022 - Present")
+st.write(
+    """
+    - ► Developed green field Data Ecosystem for commodity futures and equities asset classes. Implemented relational database structures and managed data workflows using Apache Airflow 
+    - ► Built real-time data validation pipeline for Equities Trading Desk. Defined and tested data expectations, validated data integrity and monitored data quality to improve accuracy and reduce errors 
+    - ► Designed MIS application to monitor Quant fund portfolio performance metrics enabling centralized reporting and data-driven strategies
+    - ► Performed market data streaming analytics using real-time tick by tick data connectors
+"""
+)
+
+# --- JOB 2
 st.write("💼", "**Data Analytics Associate | NatWest Group**")
 st.write("11/2021 - 10/2022")
 st.write(
@@ -98,7 +110,7 @@ st.write(
 """
 )
 
-# --- JOB 2
+# --- JOB 3
 st.write('\n')
 st.write("💼", "**Technlogy Analyst - C10 | Citi**")
 st.write("08/2020 - 11/2021")
@@ -110,7 +122,7 @@ st.write(
 """
 )
 
-# --- JOB 3
+# --- JOB 4
 st.write('\n')
 st.write("💼", "**Technlogy Analyst - C09 | Citi**")
 st.write("08/2019 - 07/2020")
@@ -121,7 +133,7 @@ st.write(
 """
 )
 
-# --- JOB 4
+# --- JOB 5
 st.write('\n')
 st.write("💼", "**Data Science Intern | Royal Bank of Scotland**")
 st.write("05/2018 - 07/2018")
