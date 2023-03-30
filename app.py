@@ -1,6 +1,5 @@
 from pathlib import Path
 
-import streamlit
 import streamlit as st
 from PIL import Image
 
@@ -103,6 +102,8 @@ st.write("💼", "**Data Analytics Associate | NatWest Group**")
 st.write("11/2021 - 10/2022")
 st.write(
     """
+- ► Lead design and execution of data intensive tests for Risk and Finance Cluster
+- ► Extensively managed and developed various self-service tools and dashboards for Global Data Analytics Team 
 - ► Developed spreadsheet analyzer tool that retrieves cellular information from EUDAs and uses visualizations to highlight the areas subject to higher risks
 - ► Text analytics on historic audit reports for readability, sentiment & wordcloud analysis aiding audit team validate the adherence of audit report ratings
 - ► Extracted and identified articles requiring IA coverage from regulatory websites using Python. Built a Flask app with dynamic visuals allowing senior management to view and modify the underlying data
