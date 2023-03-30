@@ -58,7 +58,7 @@ st.write('\n')
 st.subheader("Technical Skills")
 info = {'skills':
             ['Python', 'Data Science', 'SQL', 'Airflow', 'Postgres', 'Snowflake',
-             'Plotly', 'Tableau', 'PowerBI', 'Java', 'Amazon Athena', 'MS Excel', 'Amazon SageMaker', 'Hue', 'Jenkins']
+             'Plotly', 'Tableau', 'PowerBI', 'Java', 'Amazon Athena', 'MS Excel', 'Amazon SageMaker', 'Hue', 'Jenkins', 'Bloomberg Terminal']
         }
 skill_col_size = 6
 
